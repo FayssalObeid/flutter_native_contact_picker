@@ -29,7 +29,7 @@ public class FlutterContactPickerPlugin: FlutterPlugin, MethodCallHandler,
   private  val PICK_CONTACT = 2015
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutter_native_contact_picker")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_native_contact_picker")
     channel.setMethodCallHandler(this);
   }
 
